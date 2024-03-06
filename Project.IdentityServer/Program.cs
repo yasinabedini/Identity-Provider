@@ -19,7 +19,7 @@ try
     var app = builder
         .ConfigureServices()
         .ConfigurePipeline();
-    
+    app.UseHttpsRedirection();
     app.Run();
 }
 catch (Exception ex)
