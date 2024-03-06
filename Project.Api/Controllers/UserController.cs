@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components.Forms;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -18,7 +19,7 @@ namespace Project.Api.Controllers
             _context = context;
         }
 
-        [HttpGet("GetAll")]
+        [HttpGet("GetAll")]        
         public IActionResult Get()
         {
             return Ok(_context.Users.ToList());
